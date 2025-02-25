@@ -1,9 +1,16 @@
+import 'package:coffishopapp/presentation/authentication/login_screen.dart';
+import 'package:coffishopapp/presentation/onbording/onbording_slide3.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnbordingSlide2 extends StatelessWidget {
+class OnbordingSlide2 extends StatefulWidget {
   const OnbordingSlide2({super.key});
 
+  @override
+  State<OnbordingSlide2> createState() => _OnbordingSlide2State();
+}
+
+class _OnbordingSlide2State extends State<OnbordingSlide2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +24,12 @@ class OnbordingSlide2 extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text('Skip'),
+                  InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => LoginScreen()));
+                      },
+                      child: Text('Skip')),
                 ],
               ),
               SizedBox(
@@ -71,32 +83,40 @@ class OnbordingSlide2 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    height: 48,
-                    width: 156,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 16,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Color(0XFF5D4037),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(),
-                        Text(
-                          'Next',
-                          style:
-                              TextStyle(color: Color(0XFFFEFEFE), fontSize: 14),
-                        ),
-                        Icon(
-                          Icons.arrow_forward,
-                          color: Color(0XFFFEFEFE),
-                          size: 16,
-                        )
-                      ],
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OnbordingSlide3()));
+                    },
+                    child: Container(
+                      height: 48,
+                      width: 156,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 16,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0XFF5D4037),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(),
+                          Text(
+                            'Next',
+                            style: TextStyle(
+                                color: Color(0XFFFEFEFE), fontSize: 14),
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Color(0XFFFEFEFE),
+                            size: 16,
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
