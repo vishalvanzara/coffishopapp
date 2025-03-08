@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class OnbordinMain extends StatelessWidget {
   OnbordinMain({super.key});
 
-  List  <OnbordingModel> onbordingSlidedata = [
+  final onbordingSlidedata = [
     OnbordingModel(
         buttonText: 'NEXT',
         descriptionText:
@@ -52,6 +52,7 @@ class OnbordinMain extends StatelessWidget {
                 buttonText: onbordingSlidedata[index].buttonText,
                 slideLanght: onbordingSlidedata.length,
                 correntIndex: index,
+                
                 ontabButton: () {
                   if (index == (onbordingSlidedata.length - 1)) {
                     Navigator.pushAndRemoveUntil(
