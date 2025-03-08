@@ -1,5 +1,8 @@
 // import 'package:coffishopapp/dashboard.dart';
-import 'package:coffishopapp/presentation/onbording/onbording_scree.dart';
+
+import 'package:coffishopapp/presentation/onbording/onbordin_main.dart';
+
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: OnbordingScree(),
+      home: OnbordinMain(),
     );
   }
 }
