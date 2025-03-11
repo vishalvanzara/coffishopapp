@@ -6,6 +6,7 @@ class SkipButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenheight = MediaQuery.of(context).size.height;
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
@@ -20,7 +21,7 @@ class SkipButton extends StatelessWidget {
             style: TextStyle(
                 fontWeight: FontWeight.normal,
                 color: Color(0XFF3C3C3C),
-                fontSize: 14),
+                fontSize: screenheight * 0.0172),
           ),
         )
       ],
