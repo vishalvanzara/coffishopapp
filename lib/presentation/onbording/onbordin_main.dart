@@ -1,5 +1,5 @@
 import 'package:coffishopapp/model/onbording_model.dart';
-import 'package:coffishopapp/presentation/authentication/login_screen.dart';
+import 'package:coffishopapp/presentation/authentication/registration_screen.dart';
 import 'package:coffishopapp/presentation/onbording/onbordin_slide_data.dart';
 import 'package:flutter/material.dart';
 
@@ -58,7 +58,7 @@ class OnbordinMain extends StatelessWidget {
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LoginScreen(),
+                          builder: (context) => RegistrationScreen(),
                         ),
                         (value) => false);
                     return;

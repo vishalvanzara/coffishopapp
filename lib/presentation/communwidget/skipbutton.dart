@@ -1,4 +1,4 @@
-import 'package:coffishopapp/presentation/authentication/login_screen.dart';
+import 'package:coffishopapp/presentation/authentication/registration_screen.dart';
 import 'package:flutter/material.dart';
 
 class SkipButton extends StatelessWidget {
@@ -13,7 +13,7 @@ class SkipButton extends StatelessWidget {
         InkWell(
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => LoginScreen()),
+              MaterialPageRoute(builder: (context) => RegistrationScreen()),
             );
           },
           child: Text(
