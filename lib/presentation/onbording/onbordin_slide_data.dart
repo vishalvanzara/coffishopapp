@@ -1,23 +1,18 @@
+import 'package:coffishopapp/model/onbording_model.dart';
 import 'package:coffishopapp/presentation/communwidget/skipbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnbordinSlideData extends StatefulWidget {
-  final String imageUrl;
-  final String descriptionText;
-  final String labelText;
-  final String buttonText;
   final int correntIndex;
   final int slideLanght;
   final Function ontabButton;
+  final OnbordingModel onbordingdata;
   const OnbordinSlideData({
     super.key,
-    required this.imageUrl,
-    required this.labelText,
-    required this.descriptionText,
-    required this.buttonText,
     required this.correntIndex,
     required this.ontabButton,
+    required this.onbordingdata,
     required this.slideLanght,
   });
 
@@ -37,13 +32,13 @@ class _OnbordinSlideDataState extends State<OnbordinSlideData> {
         const SkipButton(),
         SizedBox(height: screenHeight * 0.064),
         Image.asset(
-          widget.imageUrl,
+          widget.onbordingdata.imageUrl,
           width: screenwidth * 0.757,
           height: screenHeight * 0.321,
         ),
         SizedBox(height: screenHeight * 0.077),
         Text(
-          widget.labelText,
+          widget.onbordingdata.lableText,
           style: TextStyle(
             fontSize: screenHeight * 0.02463,
             fontWeight: FontWeight.bold,
@@ -51,7 +46,7 @@ class _OnbordinSlideDataState extends State<OnbordinSlideData> {
         ),
         SizedBox(height: screenHeight * 0.019),
         Text(
-          widget.descriptionText,
+          widget.onbordingdata.descriptionText,
           style: TextStyle(
             fontSize: screenHeight * 0.019,
           ),
@@ -90,7 +85,7 @@ class _OnbordinSlideDataState extends State<OnbordinSlideData> {
                   children: [
                     const SizedBox(),
                     Text(
-                      widget.buttonText,
+                      widget.onbordingdata.buttonText,
                       style: TextStyle(
                         color: Color(0XFFFEFEFE),
                         fontSize: screenHeight * 0.0172,

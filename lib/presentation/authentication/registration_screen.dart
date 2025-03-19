@@ -1,13 +1,25 @@
 import 'package:coffishopapp/presentation/authentication/login_screen.dart';
 import 'package:coffishopapp/presentation/authentication/privacy_policy.dart';
 import 'package:coffishopapp/presentation/authentication/terms_of_service.dart';
+import 'package:coffishopapp/presentation/communwidget/auth_button.dart';
+import 'package:coffishopapp/presentation/communwidget/auth_screen_footer_text.dart';
+import 'package:coffishopapp/presentation/communwidget/common_text_field.dart';
+import 'package:coffishopapp/presentation/communwidget/shop_fee_icon.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class RegistrationScreen extends StatelessWidget {
-  RegistrationScreen({super.key});
+class RegistrationScreen extends StatefulWidget {
+  const RegistrationScreen({super.key});
+
+  @override
+  State<RegistrationScreen> createState() => _RegistrationScreenState();
+}
+
+class _RegistrationScreenState extends State<RegistrationScreen> {
   final nameController = TextEditingController();
+
   final numberController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -27,88 +39,22 @@ class RegistrationScreen extends StatelessWidget {
                   SizedBox(
                     height: screenHeight * 0.127,
                   ),
-                  Center(
-                    child: Image.asset(
-                      'asserts/images/registericon.png',
-                      height: screenHeight * 0.123,
-                      width: screenWidth * 0.584,
-                      alignment: Alignment.center,
-                    ),
-                  ),
+                  ShopFeeIcon(),
                   SizedBox(
                     height: 28,
                   ),
-                  Text(
-                    'Name',
-                    style: TextStyle(
-                      color: Color(0XFF3C3C3C),
-                      fontSize: 12,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  TextField(
+                  CommonTextField(
                     controller: nameController,
-                    cursorColor: const Color(0XFF8A8A8A),
-                    cursorHeight: 16,
-                    cursorErrorColor: Colors.red,
-                    style: const TextStyle(
-                      color: Color(0XFF3C3C3C),
-                      fontSize: 14,
-                    ),
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color(0XFF5D4037),
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      hintText: 'Input your name',
-                      hintStyle: const TextStyle(
-                          color: Color(0XFF8A8A8A),
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal),
-                      border: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color(0XFF8A8A8A),
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
+                    labelName: 'Name',
+                    hintText: 'Input your number',
                   ),
                   SizedBox(
                     height: 8,
                   ),
-                  Text('Phone'),
-                  TextField(
+                  CommonTextField(
                     controller: numberController,
-                    cursorColor: const Color(0XFF8A8A8A),
-                    cursorHeight: 16,
-                    cursorErrorColor: Colors.red,
-                    style: const TextStyle(
-                      color: Color(0XFF3C3C3C),
-                      fontSize: 14,
-                    ),
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color(0XFF5D4037),
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      hintText: 'Input your Phone',
-                      hintStyle: const TextStyle(
-                          color: Color(0XFF8A8A8A),
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal),
-                      border: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color(0XFF8A8A8A),
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
+                    labelName: 'Phone',
+                    hintText: 'Input your number',
                   ),
                   SizedBox(
                     height: 16,
@@ -134,7 +80,7 @@ class RegistrationScreen extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                          const termsorCondition(),
+                                          const TermsOfService(),
                                     ),
                                   ),
                           ),
@@ -162,66 +108,18 @@ class RegistrationScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 28),
-                  Center(
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        fixedSize: WidgetStatePropertyAll(
-                          Size(screenWidth, 48),
-                        ),
-                        backgroundColor: const WidgetStatePropertyAll(
-                          Color(0XFFCACACA),
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LoginScreen(),
-                          ),
-                          (val) => false,
-                        );
-                      },
-                      child: const Text(
-                        "Register",
-                        style: TextStyle(
-                          color: Color(0XFFFFFFFF),
-                          fontSize: 14,
-                        ),
-                      ),
-                    ),
-                  ),
+                  AuthButton(buttonText: 'Register', onTab: () {}),
                   const SizedBox(height: 183),
-                  Center(
-                    child: RichText(
-                      text: TextSpan(
-                        children: [
-                          const TextSpan(
-                            text: 'Have an account? ',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Color(0XFF555555),
-                            ),
-                          ),
-                          TextSpan(
-                            text: 'Login',
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: Color(0XFF5D4037),
-                            ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const LoginScreen(),
-                                  ),
-                                );
-                              },
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
+                  AuthScreenFooterText(
+                      initialeText: 'Have an account? ',
+                      linkText: 'Login',
+                      onTabLink: () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()),
+                            (val) => false);
+                      })
                 ],
               ),
             ),

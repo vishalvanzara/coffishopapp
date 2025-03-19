@@ -45,14 +45,11 @@ class OnbordinMain extends StatelessWidget {
           child: PageView.builder(
             controller: pageController,
             itemCount: onbordingSlidedata.length,
-            itemBuilder: (context, index) => OnbordinSlideData(
-                imageUrl: onbordingSlidedata[index].imageUrl,
-                labelText: onbordingSlidedata[index].lableText,
-                descriptionText: onbordingSlidedata[index].descriptionText,
-                buttonText: onbordingSlidedata[index].buttonText,
+            itemBuilder: (context, index) {
+              return OnbordinSlideData(
+                onbordingdata: onbordingSlidedata[index],
                 slideLanght: onbordingSlidedata.length,
                 correntIndex: index,
-                
                 ontabButton: () {
                   if (index == (onbordingSlidedata.length - 1)) {
                     Navigator.pushAndRemoveUntil(
@@ -60,13 +57,17 @@ class OnbordinMain extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) => RegistrationScreen(),
                         ),
-                        (value) => false);
+                        (val) => false);
                     return;
                   }
                   pageController.nextPage(
-                      duration: Duration(milliseconds: 100),
+                      duration: const Duration(
+                        milliseconds: 100,
+                      ),
                       curve: Curves.ease);
-                }),
+                },
+              );
+            },
           ),
         ),
       ),
