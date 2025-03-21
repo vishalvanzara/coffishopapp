@@ -1,18 +1,24 @@
-import 'package:coffishopapp/model/onbording_model.dart';
 import 'package:coffishopapp/presentation/communwidget/skipbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnbordinSlideData extends StatefulWidget {
-  final int correntIndex;
+  final String imageUrl;
+  final String labelText;
+  final String descriptionText;
+  final String buttonText;
   final int slideLanght;
+  final int correntIndex;
   final Function ontabButton;
-  final OnbordingModel onbordingdata;
+
   const OnbordinSlideData({
     super.key,
+    required this.imageUrl,
+    required this.labelText,
+    required this.descriptionText,
+    required this.buttonText,
     required this.correntIndex,
     required this.ontabButton,
-    required this.onbordingdata,
     required this.slideLanght,
   });
 
@@ -32,13 +38,13 @@ class _OnbordinSlideDataState extends State<OnbordinSlideData> {
         const SkipButton(),
         SizedBox(height: screenHeight * 0.064),
         Image.asset(
-          widget.onbordingdata.imageUrl,
+          widget.imageUrl,
           width: screenwidth * 0.757,
           height: screenHeight * 0.321,
         ),
         SizedBox(height: screenHeight * 0.077),
         Text(
-          widget.onbordingdata.lableText,
+          widget.labelText,
           style: TextStyle(
             fontSize: screenHeight * 0.02463,
             fontWeight: FontWeight.bold,
@@ -46,7 +52,7 @@ class _OnbordinSlideDataState extends State<OnbordinSlideData> {
         ),
         SizedBox(height: screenHeight * 0.019),
         Text(
-          widget.onbordingdata.descriptionText,
+          widget.descriptionText,
           style: TextStyle(
             fontSize: screenHeight * 0.019,
           ),
@@ -85,7 +91,7 @@ class _OnbordinSlideDataState extends State<OnbordinSlideData> {
                   children: [
                     const SizedBox(),
                     Text(
-                      widget.onbordingdata.buttonText,
+                      widget.buttonText,
                       style: TextStyle(
                         color: Color(0XFFFEFEFE),
                         fontSize: screenHeight * 0.0172,

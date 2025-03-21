@@ -1,5 +1,5 @@
 import 'package:coffishopapp/model/onbording_model.dart';
-import 'package:coffishopapp/presentation/authentication/registration_screen.dart';
+import 'package:coffishopapp/presentation/authentication/login_screen.dart';
 import 'package:coffishopapp/presentation/onbording/onbordin_slide_data.dart';
 import 'package:flutter/material.dart';
 
@@ -36,39 +36,40 @@ class OnbordinMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0XFFF5F5F5),
+      
       body: SafeArea(
+        
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: 20,
             vertical: 24,
           ),
           child: PageView.builder(
-            controller: pageController,
-            itemCount: onbordingSlidedata.length,
-            itemBuilder: (context, index) {
-              return OnbordinSlideData(
-                onbordingdata: onbordingSlidedata[index],
-                slideLanght: onbordingSlidedata.length,
-                correntIndex: index,
-                ontabButton: () {
-                  if (index == (onbordingSlidedata.length - 1)) {
-                    Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => RegistrationScreen(),
-                        ),
-                        (val) => false);
-                    return;
-                  }
-                  pageController.nextPage(
-                      duration: const Duration(
-                        milliseconds: 100,
-                      ),
-                      curve: Curves.ease);
-                },
-              );
-            },
-          ),
+              controller: pageController,
+              itemCount: onbordingSlidedata.length,
+              itemBuilder: (context, index) => OnbordinSlideData(
+                    imageUrl: onbordingSlidedata[index].imageUrl,
+                    labelText: onbordingSlidedata[index].lableText,
+                    descriptionText: onbordingSlidedata[index].descriptionText,
+                    buttonText: onbordingSlidedata[index].buttonText,
+                    correntIndex: index,
+                    slideLanght: onbordingSlidedata.length,
+                    ontabButton: () {
+                      if (index == (onbordingSlidedata.length - 1)) {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
+                          (val) => false,
+                        );
+                        return;
+                      }
+                      pageController.nextPage(
+                          duration: Duration(milliseconds: 100),
+                          curve: Curves.ease);
+                    },
+                  )),
         ),
       ),
     );

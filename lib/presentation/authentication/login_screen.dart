@@ -24,37 +24,39 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: screenwidth * 0.053),
           child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: screenhight * 0.127,
-                ),
-                ShopFeeIcon(),
-                SizedBox(
-                  height: screenhight * 0.039,
-                ),
-                CommonTextField(
-                  controller: numberController,
-                  labelName: 'Mobile No',
-                  hintText: 'Input your number',
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                AuthButton(buttonText: 'Login', onTab: () {}),
-                const SizedBox(height: 268),
-                AuthScreenFooterText(
-                    initialeText: 'Don’t have an account?',
-                    linkText: 'Register',
-                    onTabLink: () {
-                      Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => RegistrationScreen()),
-                          (val) => false);
-                    })
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: screenhight * 0.127,
+                  ),
+                  ShopFeeIcon(),
+                  SizedBox(
+                    height: screenhight * 0.039,
+                  ),
+                  CommonTextField(
+                    controller: numberController,
+                    labelName: 'Mobile No',
+                    hintText: 'Input your number',
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  AuthButton(buttonText: 'Login', onTab: () {}),
+                  const SizedBox(height: 268),
+                  AuthScreenFooterText(
+                      initialeText: 'Don’t have an account?',
+                      linkText: 'Register',
+                      onTabLink: () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegistrationScreen()),
+                            (val) => false);
+                      })
+                ],
+              ),
             ),
           ),
         ),
