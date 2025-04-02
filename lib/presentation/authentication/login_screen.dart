@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   AuthButton(buttonText: 'Login', onTab: () {}),
                   const SizedBox(height: 268),
                   AuthScreenFooterText(
-                      initialeText: 'Don’t have an account?',
+                      initialeText: 'Don’t have an account? ',
                       linkText: 'Register',
                       onTabLink: () {
                         Navigator.pushAndRemoveUntil(

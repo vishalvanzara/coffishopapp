@@ -1,4 +1,5 @@
 import 'package:coffishopapp/presentation/authentication/otp_loading_screen.dart';
+import 'package:coffishopapp/presentation/communwidget/sent_otp_popup_common_cta.dart';
 import 'package:flutter/material.dart';
 
 class SentOtpPopup extends StatelessWidget {
@@ -69,52 +70,22 @@ class SentOtpPopup extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InkWell(
+                SentOtpPopupCommonCta(
+                  buttonText: 'Cancel',
                   onTap: () {
                     Navigator.of(context).pop();
                   },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: const Color(0XFF5D4037),
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Text(
-                      'cancel',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0XFF3C3C3C),
-                      ),
-                    ),
-                  ),
+                  buttonBackground: Color(0XFFFEFEFE),
+                  buttonTextColor: Color(0XFF3C3C3C),
                 ),
-                InkWell(
+                SentOtpPopupCommonCta(
+                  buttonText: 'Continue',
                   onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => OtpLoadingScreen()));
                   },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 8,
-                    ),
-                    decoration: BoxDecoration(
-                      color: const Color(0XFF5D4037),
-                      border: Border.all(color: Color(0XFF5D4037)),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Text(
-                      'Continue',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0XFFFEFEFE),
-                      ),
-                    ),
-                  ),
                 ),
               ],
             )

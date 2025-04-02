@@ -7,10 +7,12 @@ class AuthScreenFooterText extends StatelessWidget {
     required this.initialeText,
     required this.linkText,
     required this.onTabLink,
+    this.linkTextColor,
   });
   final String initialeText;
   final String linkText;
   final Function onTabLink;
+  final Color? linkTextColor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +30,13 @@ class AuthScreenFooterText extends StatelessWidget {
             ),
             TextSpan(
               text: linkText,
+
               // 'Register',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14,
-                color: Color(0XFF5D4037),
+                color: linkTextColor ?? Color(0XFF5D4037),
               ),
+
               recognizer: TapGestureRecognizer()..onTap = () => onTabLink(),
             ),
           ],
