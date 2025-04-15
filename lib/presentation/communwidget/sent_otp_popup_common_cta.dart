@@ -16,12 +16,14 @@ class SentOtpPopupCommonCta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     return InkWell(
       onTap: () => onTap(),
       child: Container(
-        padding: const EdgeInsets.symmetric(
-          vertical: 8,
-          horizontal: 24,
+        padding: EdgeInsets.symmetric(
+          vertical: screenHeight * 0.009,
+          horizontal: screenWidth * 0.064,
         ),
         decoration: BoxDecoration(
           color: buttonBackground ?? Color(0XFF5D4037),
@@ -33,7 +35,7 @@ class SentOtpPopupCommonCta extends StatelessWidget {
         child: Text(
           buttonText,
           style: TextStyle(
-            fontSize: 14,
+            fontSize: screenHeight * 0.017,
             color: buttonTextColor ?? const Color(0XFFFEFEFE),
           ),
         ),

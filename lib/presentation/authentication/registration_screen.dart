@@ -39,7 +39,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 children: [
                   SizedBox(height: screenHeight * 0.127),
                   ShopFeeIcon(),
-                  const SizedBox(height: 28),
+                  SizedBox(height: screenHeight * 0.034),
                   CommonTextField(
                     controller: nameController,
                     labelName: 'Name',
@@ -47,7 +47,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     textInputAction: TextInputAction.next,
                     textInputType: TextInputType.name,
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: screenHeight * 0.009),
                   CommonTextField(
                     controller: numberController,
                     labelName: 'Phone',
@@ -55,9 +55,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     textInputAction: TextInputAction.done,
                     textInputType: TextInputType.phone,
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: screenHeight * 0.019),
                   const TermsandPrivacyText(),
-                  const SizedBox(height: 28),
+                  SizedBox(height: screenHeight * 0.034),
                   AuthButton(
                     buttonText: 'Register',
                     onTab: () {
@@ -66,7 +66,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           builder: (context) => SentOtpPopup());
                     },
                   ),
-                  const SizedBox(height: 183),
+                  SizedBox(height: screenHeight * 0.22),
                   AuthScreenFooterText(
                       initialeText: 'Have an account? ',
                       linkText: 'Login',

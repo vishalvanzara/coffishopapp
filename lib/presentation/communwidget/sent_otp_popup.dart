@@ -45,28 +45,28 @@ class SentOtpPopup extends StatelessWidget {
                         'We will send the OTP code via SMS. Make sure the number ',
                     style: TextStyle(
                       color: Color(0XFF555555),
-                      fontSize: 12,
+                      fontSize: screenHeight * 0.014,
                     ),
                   ),
                   TextSpan(
                     text: '081234567891 ',
                     style: TextStyle(
                       color: Color(0XFF3C3C3C),
-                      fontSize: 12,
+                      fontSize: screenHeight * 0.014,
                     ),
                   ),
                   TextSpan(
                     text: 'is active',
                     style: TextStyle(
                       color: Color(0XFF555555),
-                      fontSize: 12,
+                      fontSize: screenHeight * 0.014,
                     ),
                   ),
                 ],
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 24),
+            SizedBox(height: screenHeight * 0.029),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

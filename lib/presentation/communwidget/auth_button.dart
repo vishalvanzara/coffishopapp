@@ -22,8 +22,8 @@ class AuthButton extends StatelessWidget {
             Color(0XFFCACACA),
           ),
         ),
-        onPressed: () =>onTab(),
-        child:  Text(
+        onPressed: () => onTab(),
+        child: Text(
           buttonText,
           style: TextStyle(
             color: Color(0XFFFFFFFF),

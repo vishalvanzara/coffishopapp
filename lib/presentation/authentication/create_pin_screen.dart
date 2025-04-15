@@ -76,12 +76,15 @@ class _CreatePinScreenState extends State<CreatePinScreen> {
                     height: 24,
                   ),
                   PinCodeTextField(
+                    textStyle: TextStyle(color: Color(0XFF3C3C3C)),
+                    animationType: AnimationType.fade,
                     controller: pinController,
                     appContext: context,
                     length: 6,
-                    obscureText: true,
+                    obscureText: false,
                     showCursor: false,
                     enableActiveFill: true,
+                    autoFocus: true,
                     pinTheme: PinTheme(
                       fieldOuterPadding: const EdgeInsets.only(right: 24),
                       activeColor: const Color(0XFF3C3C3C),

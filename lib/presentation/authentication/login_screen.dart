@@ -39,6 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: numberController,
                     labelName: 'Mobile No',
                     hintText: 'Input your number',
+                    textInputType: TextInputType.number,
                   ),
                   SizedBox(
                     height: 16,

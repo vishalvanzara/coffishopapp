@@ -64,6 +64,8 @@ flutter:
   assets:
     - asserts/images/onbording/
     - asserts/images/
+    - asserts/images/home/carousel/
+    - asserts/images/home/products/
     
     
 

@@ -22,27 +22,28 @@ class CommonTextField extends StatefulWidget {
 class _CommonTextFieldState extends State<CommonTextField> {
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           widget.labelName,
-          style: const TextStyle(
+          style: TextStyle(
             color: Color(0XFF3C3C3C),
-            fontSize: 12,
+            fontSize: screenHeight * 0.014,
           ),
         ),
-        const SizedBox(height: 4),
+        SizedBox(height: screenHeight * 0.004),
         TextField(
           keyboardType: widget.textInputType,
           textInputAction: widget.textInputAction,
           controller: widget.controller,
           cursorColor: const Color(0XFF8A8A8A),
-          cursorHeight: 16,
+          cursorHeight: screenHeight * 0.019,
           cursorErrorColor: Colors.red,
-          style: const TextStyle(
+          style: TextStyle(
             color: Color(0XFF3C3C3C),
-            fontSize: 14,
+            fontSize: screenHeight * 0.017,
           ),
           decoration: InputDecoration(
             focusedBorder: OutlineInputBorder(
@@ -52,9 +53,9 @@ class _CommonTextFieldState extends State<CommonTextField> {
               borderRadius: BorderRadius.circular(16),
             ),
             hintText: widget.hintText,
-            hintStyle: const TextStyle(
+            hintStyle: TextStyle(
                 color: Color(0XFF8A8A8A),
-                fontSize: 14,
+                fontSize: screenHeight * 0.017,
                 fontWeight: FontWeight.normal),
             border: OutlineInputBorder(
               borderSide: const BorderSide(
