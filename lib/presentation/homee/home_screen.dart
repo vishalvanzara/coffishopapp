@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:coffishopapp/model/pills_model.dart';
 import 'package:coffishopapp/presentation/communwidget/home_carousel_item.dart';
 import 'package:coffishopapp/presentation/communwidget/pills.dart';
+import 'package:coffishopapp/presentation/communwidget/prodct_tile.dart';
 import 'package:coffishopapp/presentation/communwidget/search_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -148,26 +149,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         SizedBox(
                           height: 6,
                         ),
-                        Stack(
-                          alignment: Alignment.bottomCenter,
-                          children: [
-                            Container(
-                              height: 20,
-                              width: 200,
-                              color: Colors.red,
-                            ),
-                            Container(
-                              height: 100,
-                              width: 100,
-                              color: Colors.yellow,
-                            ),
-                            Container(
-                              height: 50,
-                              width: 50,
-                              color: Colors.white,
-                            )
-                          ],
-                        )
+                        ProductTile(productDescription: 'hi how there')
                       ],
                     ),
                     const Text('Hello from tab 2'),

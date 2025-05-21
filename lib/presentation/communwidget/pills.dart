@@ -39,7 +39,7 @@ class Pills extends StatelessWidget {
                   pillsData.isSelected ? Color(0XFFFEFEFE) : Color(0XFF3C3C3C),
               fontWeight: FontWeight.w500,
             ),
-          )
+          ),
         ],
       ),
     );
